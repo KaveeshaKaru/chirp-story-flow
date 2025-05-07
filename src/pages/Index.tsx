@@ -1,12 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Sun, Umbrella, PalmTree, Waves } from "lucide-react";
+import HeroSection from "@/components/HeroSection";
+import FeaturesSection from "@/components/FeaturesSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import ContactSection from "@/components/ContactSection";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState("home");
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+      
+      <main className="flex-1">
+        <section id="home" className="scroll-mt-16">
+          <HeroSection />
+        </section>
+        
+        <section id="features" className="scroll-mt-16">
+          <FeaturesSection />
+        </section>
+        
+        <section id="testimonials" className="scroll-mt-16">
+          <TestimonialsSection />
+        </section>
+        
+        <section id="contact" className="scroll-mt-16">
+          <ContactSection />
+        </section>
+      </main>
+      
+      <Footer />
     </div>
   );
 };
