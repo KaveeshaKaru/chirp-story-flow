@@ -28,8 +28,16 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <div className="bg-white py-20">
-      <div className="container mx-auto px-4">
+    <div className="bg-white py-20 relative overflow-hidden">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-10"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')"
+        }}
+      ></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Experience Beach Living</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -39,9 +47,14 @@ const FeaturesSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card 
+              key={index} 
+              className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white/80 backdrop-blur-sm"
+            >
               <CardHeader className="pb-2 flex flex-col items-center">
-                {feature.icon}
+                <div className="text-[#2980b9] transition-transform hover:scale-110 duration-300">
+                  {feature.icon}
+                </div>
                 <CardTitle className="text-lg mt-4">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
