@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { PalmTree } from "lucide-react";
+import { PalmTree as Palmtree } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -45,15 +45,15 @@ const HeroSection = () => {
           
           <div className="flex items-center justify-center gap-8 text-white/80">
             <div className="flex items-center gap-2">
-              <PalmTree size={20} />
+              <Palmtree size={20} />
               <span>Beach Access</span>
             </div>
             <div className="flex items-center gap-2">
-              <PalmTree size={20} />
+              <Palmtree size={20} />
               <span>Ocean View</span>
             </div>
             <div className="flex items-center gap-2">
-              <PalmTree size={20} />
+              <Palmtree size={20} />
               <span>Surf Spot</span>
             </div>
           </div>

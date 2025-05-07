@@ -1,13 +1,13 @@
 
 import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Sun, Umbrella, PalmTree, Sailboat } from "lucide-react";
+import { Sun, Umbrella, PalmTree as Palmtree, Sailboat } from "lucide-react";
 
 const features = [
   {
     title: "Beachfront Access",
     description: "Direct access to the beautiful Weligama beach, perfect for morning walks and sunset views.",
-    icon: <PalmTree className="h-10 w-10 text-[#2980b9]" />
+    icon: <Palmtree className="h-10 w-10 text-[#2980b9]" />
   },
   {
     title: "Surf Paradise",
