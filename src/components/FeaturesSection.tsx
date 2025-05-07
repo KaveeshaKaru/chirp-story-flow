@@ -28,7 +28,7 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <div className="bg-white py-20 relative overflow-hidden">
+    <div className="bg-white py-20 relative overflow-hidden font-inter">
       {/* Background image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-10"
@@ -39,7 +39,7 @@ const FeaturesSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Experience Beach Living</h2>
+          <h2 className="text-3xl font-extrabold text-gray-800 mb-4">Experience Beach Living</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Discover what makes Tara Guest House the perfect beachside retreat for your Sri Lankan adventure.
           </p>
@@ -55,7 +55,7 @@ const FeaturesSection = () => {
                 <div className="text-[#2980b9] transition-transform hover:scale-110 duration-300">
                   {feature.icon}
                 </div>
-                <CardTitle className="text-lg mt-4">{feature.title}</CardTitle>
+                <CardTitle className="text-lg mt-4 font-extrabold">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <CardDescription>{feature.description}</CardDescription>

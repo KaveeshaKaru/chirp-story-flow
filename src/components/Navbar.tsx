@@ -30,7 +30,7 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 font-inter ${
         scrolled 
           ? "bg-white/90 shadow-md backdrop-blur-sm py-2" 
           : "bg-transparent py-4"
@@ -39,7 +39,7 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center gap-2 group">
           <Waves className="h-6 w-6 text-[#2980b9] group-hover:animate-bounce" />
-          <span className={`font-bold text-2xl transition-colors duration-300 ${
+          <span className={`font-extrabold text-2xl transition-colors duration-300 ${
             scrolled ? "text-[#2980b9]" : "text-white"
           } group-hover:text-[#6dd5fa]`}>TARA</span>
         </div>
