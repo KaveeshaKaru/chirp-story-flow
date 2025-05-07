@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Sun, Umbrella, PalmTree as Palmtree, Waves } from "lucide-react";
+import { Sun, Umbrella, Palmtree, Waves } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";

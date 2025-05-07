@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { PalmTree as Palmtree } from "lucide-react";
+import { Palmtree } from "lucide-react";
 
 const HeroSection = () => {
   return (
