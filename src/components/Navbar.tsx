@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Waves } from "lucide-react";
+import { Waves, LogIn } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface NavbarProps {
   activeSection: string;
@@ -63,12 +64,25 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
           ))}
         </nav>
         
-        <Button 
-          onClick={() => scrollToSection("contact")}
-          className="bg-[#2980b9] hover:bg-[#2070a0] text-white transition-transform hover:scale-105"
-        >
-          Book Now
-        </Button>
+        <div className="flex items-center gap-2">
+          <Link to="/admin/login">
+            <Button 
+              variant="outline" 
+              className={`border-[#2980b9] transition-transform hover:scale-105 flex items-center gap-2 ${
+                scrolled ? "text-[#2980b9] bg-white" : "text-white bg-transparent"
+              }`}
+            >
+              <LogIn className="w-4 h-4" />
+              Login
+            </Button>
+          </Link>
+          <Button 
+            onClick={() => scrollToSection("contact")}
+            className="bg-[#2980b9] hover:bg-[#2070a0] text-white transition-transform hover:scale-105"
+          >
+            Book Now
+          </Button>
+        </div>
       </div>
     </header>
   );
