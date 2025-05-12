@@ -1,20 +1,37 @@
 
 import React from "react";
-import { Waves, Sun, Umbrella, Cloud } from "lucide-react";
+import { Sun, Umbrella, Cloud } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-b from-[#0ea5e9] to-[#2980b9] text-white overflow-hidden pt-16">
-      {/* Wave animation at the top */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="relative block w-full">
+    <footer className="relative bg-gradient-to-b from-[#0ea5e9] to-[#2980b9] text-white pt-16">
+      {/* Static wavy background */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <svg 
+          viewBox="0 0 1200 120" 
+          preserveAspectRatio="none" 
+          className="absolute top-0 left-0 w-full h-full" 
+          fill="url(#footer-gradient)"
+        >
+          <defs>
+            <linearGradient id="footer-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0.3" />
+              <stop offset="50%" stopColor="#38bdf8" stopOpacity="0.2" />
+              <stop offset="100%" stopColor="#0284c7" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
           <path 
-            fill="#ffffff" 
-            fillOpacity="1" 
-            d="M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,133.3C672,139,768,181,864,170.7C960,160,1056,96,1152,90.7C1248,85,1344,139,1392,165.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-            className="animate-wave"
-          ></path>
+            d="M0,32 C320,80 420,0 500,32 C580,64 620,32 720,32 C820,32 900,64 1000,32 C1100,0 1180,64 1200,32 L1200,120 L0,120 Z"
+          />
+          <path 
+            d="M0,60 C300,0 400,80 550,60 C700,40 750,80 900,80 C1050,80 1150,20 1200,60 L1200,120 L0,120 Z"
+            className="opacity-30"
+          />
+          <path 
+            d="M0,90 C250,50 350,100 450,90 C550,80 650,20 750,80 C850,140 950,60 1200,90 L1200,120 L0,120 Z" 
+            className="opacity-20"
+          />
         </svg>
       </div>
 
@@ -29,9 +46,6 @@ const Footer = () => {
         <div className="absolute bottom-[20%] left-[15%] animate-float-fast opacity-50">
           <Cloud size={30} className="text-white" />
         </div>
-        <div className="absolute bottom-[30%] right-[15%] animate-float-medium opacity-50">
-          <Waves size={45} className="text-blue-300" />
-        </div>
       </div>
 
       {/* Main footer content */}
@@ -41,7 +55,7 @@ const Footer = () => {
           <div className="backdrop-blur-sm bg-white/5 p-6 rounded-xl border border-white/10 transform transition-transform hover:scale-105">
             <div className="flex items-center gap-2 mb-4">
               <div className="p-2 bg-white/20 rounded-full">
-                <Waves className="h-6 w-6 text-white animate-pulse" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-white animate-pulse"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
               </div>
               <span className="font-bold text-2xl">TARA</span>
             </div>
@@ -132,36 +146,6 @@ const Footer = () => {
                   24/7 - 365 Days
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Bottom wave animation */}
-        <div className="relative mt-12">
-          <div className="flex overflow-hidden h-8">
-            <div className="flex min-w-full animate-wave-slow">
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-            </div>
-            <div className="flex min-w-full animate-wave">
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
-              <Waves className="text-white/10 h-8 w-20" />
             </div>
           </div>
         </div>
