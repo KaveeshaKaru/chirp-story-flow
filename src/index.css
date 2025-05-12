@@ -141,7 +141,32 @@
   .safe-bottom {
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
-
+  @keyframes wave-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes wave-scroll-slow {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-wave-scroll {
+    animation: wave-scroll 12s linear infinite;
+  }
+  
+  .animate-wave-scroll-slow {
+    animation: wave-scroll-slow 20s linear infinite;
+  }
+  
   @keyframes fadeIn {
     from {
       opacity: 0;
