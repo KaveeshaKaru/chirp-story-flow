@@ -1,19 +1,11 @@
-
 import React from "react";
 import { Sun, Umbrella, Cloud } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const Footer = () => {
-  return (
-    <footer className="relative bg-gradient-to-b from-[#0ea5e9] to-[#2980b9] text-white pt-16">
+  return <footer className="relative bg-gradient-to-b from-[#0ea5e9] to-[#2980b9] text-white pt-16">
       {/* Static wavy background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <svg 
-          viewBox="0 0 1200 120" 
-          preserveAspectRatio="none" 
-          className="absolute top-0 left-0 w-full h-full" 
-          fill="url(#footer-gradient)"
-        >
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="absolute top-0 left-0 w-full h-full" fill="url(#footer-gradient)">
           <defs>
             <linearGradient id="footer-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0.3" />
@@ -21,17 +13,9 @@ const Footer = () => {
               <stop offset="100%" stopColor="#0284c7" stopOpacity="0.3" />
             </linearGradient>
           </defs>
-          <path 
-            d="M0,32 C320,80 420,0 500,32 C580,64 620,32 720,32 C820,32 900,64 1000,32 C1100,0 1180,64 1200,32 L1200,120 L0,120 Z"
-          />
-          <path 
-            d="M0,60 C300,0 400,80 550,60 C700,40 750,80 900,80 C1050,80 1150,20 1200,60 L1200,120 L0,120 Z"
-            className="opacity-30"
-          />
-          <path 
-            d="M0,90 C250,50 350,100 450,90 C550,80 650,20 750,80 C850,140 950,60 1200,90 L1200,120 L0,120 Z" 
-            className="opacity-20"
-          />
+          <path d="M0,32 C320,80 420,0 500,32 C580,64 620,32 720,32 C820,32 900,64 1000,32 C1100,0 1180,64 1200,32 L1200,120 L0,120 Z" />
+          <path d="M0,60 C300,0 400,80 550,60 C700,40 750,80 900,80 C1050,80 1150,20 1200,60 L1200,120 L0,120 Z" className="opacity-30" />
+          <path d="M0,90 C250,50 350,100 450,90 C550,80 650,20 750,80 C850,140 950,60 1200,90 L1200,120 L0,120 Z" className="opacity-20" />
         </svg>
       </div>
 
@@ -55,7 +39,7 @@ const Footer = () => {
           <div className="backdrop-blur-sm bg-white/5 p-6 rounded-xl border border-white/10 transform transition-transform hover:scale-105">
             <div className="flex items-center gap-2 mb-4">
               <div className="p-2 bg-white/20 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-white animate-pulse"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-white animate-pulse"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" /><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" /><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" /></svg>
               </div>
               <span className="font-bold text-2xl">TARA</span>
             </div>
@@ -85,27 +69,18 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-3">
-              {["Home", "Features", "Testimonials", "Contact"].map((link) => (
-                <li key={link} className="group">
-                  <a 
-                    href={`#${link.toLowerCase()}`} 
-                    className="text-white/80 hover:text-white transition-colors flex items-center gap-2 group-hover:translate-x-1 transform transition-transform"
-                  >
+              {["Home", "Features", "Testimonials", "Contact"].map(link => <li key={link} className="group">
+                  <a href={`#${link.toLowerCase()}`} className="text-white/80 hover:text-white transition-colors flex items-center gap-2 group-hover:translate-x-1 transform transition-transform">
                     <span className="h-1.5 w-1.5 rounded-full bg-white/50 group-hover:bg-white group-hover:w-3 transition-all"></span>
                     {link}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
 
             <div className="mt-6 p-3 bg-white/10 rounded-lg">
               <p className="text-sm font-medium text-white/90">Subscribe to our newsletter</p>
               <div className="mt-2 flex flex-col sm:flex-row gap-2">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="px-3 py-2 bg-white/20 border border-white/10 rounded-md text-sm flex-1 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/30"
-                />
+                <input type="email" placeholder="Enter your email" className="px-3 py-2 bg-white/20 border border-white/10 rounded-md text-sm flex-1 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/30" />
                 <Button size="sm" className="bg-white text-blue-600 hover:bg-white/90 sm:w-auto w-full mt-1 sm:mt-0">Subscribe</Button>
               </div>
             </div>
@@ -157,11 +132,9 @@ const Footer = () => {
             <span className="px-2 hidden sm:inline">|</span> 
             <span>All rights reserved.</span>
           </p>
-          <p className="mt-2 text-sm">Crafted with ❤️ in Weligama</p>
+          <p className="mt-2 text-sm">Crafted by ZackMalli ❤️ in Weligama</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
