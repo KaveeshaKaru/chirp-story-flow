@@ -33,7 +33,7 @@ const Footer = () => {
       </div>
 
       {/* Main footer content */}
-      <div className="container mx-auto px-4 py-12 relative z-10">
+      <div className="container mx-auto px-4 py-1 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Logo and description */}
           <div className="backdrop-blur-sm bg-white/5 p-6 rounded-xl border border-white/10 transform transition-transform hover:scale-105">
@@ -126,7 +126,7 @@ const Footer = () => {
         </div>
         
         {/* Copyright */}
-        <div className="border-t border-white/20 mt-12 pt-8 text-center text-white/60">
+        <div className="border-t border-white/20 mt-12 pt-5 text-center text-white/60">
           <p className="flex flex-wrap items-center justify-center gap-1 px-4">
             <span>© {new Date().getFullYear()} Tara Guest House.</span> 
             <span className="px-2 hidden sm:inline">|</span> 
