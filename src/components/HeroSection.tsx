@@ -62,7 +62,7 @@ const HeroSection = () => {
               </span>
             </h1>
             <div className="max-w-6xl mx-auto px-4">
-              <p className="text-lg sm:text-xl mb-8 drop-shadow-md font-league-spartan font-medium text-center leading-snug md:text-3xl">Experience the magic of Weligama Bay at our boutique beachfront guest house in the heart of 
+              <p className="text-lg sm:text-xl mb-8 drop-shadow-md font-league-spartan font-medium text-center leading-snug md:text-3xl">Experience the magic of Weligama Bay at our boutique beachfront guest house in the heart of
 Sri Lanka's surf paradise</p>
             </div>
 
