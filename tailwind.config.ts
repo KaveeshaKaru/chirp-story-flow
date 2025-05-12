@@ -144,6 +144,14 @@ export default {
                 'wave': {
                     '0%': { transform: 'translateX(0)' },
                     '100%': { transform: 'translateX(-50%)' }
+                },
+                'ripple': {
+                    '0%': { transform: 'scale(0.8)', opacity: '1' },
+                    '100%': { transform: 'scale(2)', opacity: '0' }
+                },
+                'shimmer': {
+                    '0%': { backgroundPosition: '-200% 0' },
+                    '100%': { backgroundPosition: '200% 0' }
                 }
 			},
 			animation: {
@@ -156,7 +164,9 @@ export default {
                 'float-medium': 'float-medium 5s ease-in-out infinite',
                 'float-fast': 'float-fast 4s ease-in-out infinite',
                 'wave': 'wave 10s linear infinite',
-                'wave-slow': 'wave 15s linear infinite'
+                'wave-slow': 'wave 15s linear infinite',
+                'ripple': 'ripple 2s ease-out infinite',
+                'shimmer': 'shimmer 2s linear infinite'
 			}
 		}
 	},
