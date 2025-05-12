@@ -65,9 +65,11 @@ const HeroSection = () => {
                 </svg>
               </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 drop-shadow-md">
-              Experience the magic of Weligama Bay at our boutique beachfront guest house in the heart of Sri Lanka's surf paradise
-            </p>
+            <div className="max-w-6xl mx-auto px-4">
+              <p className="text-lg sm:text-xl md:text-4xl mb-8 drop-shadow-md font-league-spartan font-medium text-center leading-snug">
+                Experience the magic of Weligama Bay at our boutique beachfront guest house in the heart of Sri Lanka's surf paradise
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
               <Button size="lg" className="bg-white text-[#2980b9] hover:bg-white/90 font-semibold transition-all hover:scale-105 hover:shadow-lg" onClick={() => {
