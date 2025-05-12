@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Palmtree, Waves, Sun, MapPin } from "lucide-react";
-
 const HeroSection = () => {
   const [offset, setOffset] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     setIsVisible(true);
     const handleScroll = () => {
@@ -16,15 +14,13 @@ const HeroSection = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+  return <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background image with parallax effect */}
       <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')",
-        transform: `translateY(${offset * 0.5}px)`,
-        filter: "brightness(0.6)"
-      }}></div>
+      backgroundImage: "url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')",
+      transform: `translateY(${offset * 0.5}px)`,
+      filter: "brightness(0.6)"
+    }}></div>
 
       {/* Animated floating elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -57,8 +53,8 @@ const HeroSection = () => {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-              <span className="block mb-2">Your Perfect</span>
-              <span className="relative inline-block">
+              <span className="block mb-2 text-8xl">Your Perfect</span>
+              <span className="relative inline-block text-7xl">
                 Beachside Retreat
                 <svg className="absolute -bottom-2 left-0 right-0 w-full" viewBox="0 0 200 8" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0,5 Q40,0 80,5 T160,5 T240,5" stroke="#6dd5fa" strokeWidth="3" fill="none" strokeLinecap="round" />
@@ -66,30 +62,29 @@ const HeroSection = () => {
               </span>
             </h1>
             <div className="max-w-6xl mx-auto px-4">
-              <p className="text-lg sm:text-xl md:text-4xl mb-8 drop-shadow-md font-league-spartan font-medium text-center leading-snug">
-                Experience the magic of Weligama Bay at our boutique beachfront guest house in the heart of Sri Lanka's surf paradise
-              </p>
+              <p className="text-lg sm:text-xl mb-8 drop-shadow-md font-league-spartan font-medium text-center leading-snug md:text-3xl">Experience the magic of Weligama Bay at our boutique beachfront guest house in the heart of 
+Sri Lanka's surf paradise</p>
             </div>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
               <Button size="lg" className="bg-white text-[#2980b9] hover:bg-white/90 font-semibold transition-all hover:scale-105 hover:shadow-lg" onClick={() => {
-                const contactSection = document.getElementById("contact");
-                contactSection?.scrollIntoView({
-                  behavior: "smooth"
-                });
-              }}>
+              const contactSection = document.getElementById("contact");
+              contactSection?.scrollIntoView({
+                behavior: "smooth"
+              });
+            }}>
                 Book Your Stay
               </Button>
               <Button size="lg" variant="outline" style={{
-                backgroundImage: 'linear-gradient(to right, #2980b9, #6dd5fa, #ffffff)',
-                color: '#3f3f3f',
-                border: 'none'
-              }} className="transition-all hover:scale-105" onClick={() => {
-                const featuresSection = document.getElementById("features");
-                featuresSection?.scrollIntoView({
-                  behavior: "smooth"
-                });
-              }}>Explore Features</Button>
+              backgroundImage: 'linear-gradient(to right, #2980b9, #6dd5fa, #ffffff)',
+              color: '#3f3f3f',
+              border: 'none'
+            }} className="transition-all hover:scale-105" onClick={() => {
+              const featuresSection = document.getElementById("features");
+              featuresSection?.scrollIntoView({
+                behavior: "smooth"
+              });
+            }}>Explore Features</Button>
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-8 text-white/80">
@@ -134,8 +129,6 @@ const HeroSection = () => {
       </div>
 
 
-    </div>
-  );
-}
-
+    </div>;
+};
 export default HeroSection;
