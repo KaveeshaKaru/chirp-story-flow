@@ -87,17 +87,22 @@ const HeroSection = () => {
               >
                 Book Your Stay
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white/10 transition-all hover:scale-105"
-                onClick={() => {
-                  const featuresSection = document.getElementById("features");
-                  featuresSection?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Explore Amenities
-              </Button>
+              <Button
+  size="lg"
+  variant="outline"
+  style={{
+    backgroundImage: 'linear-gradient(to right, #2980b9, #6dd5fa, #ffffff)',
+    color: '#fff',
+    border: 'none',
+  }}
+  className="transition-all hover:scale-105"
+  onClick={() => {
+    const featuresSection = document.getElementById("features");
+    featuresSection?.scrollIntoView({ behavior: "smooth" });
+  }}
+>
+  Explore Amenities
+</Button>
             </div>
             
             <div className="flex flex-wrap items-center justify-center gap-8 text-white/80">
