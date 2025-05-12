@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Waves, LogIn } from "lucide-react";
+import { Waves, LogIn, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface NavbarProps {
   activeSection: string;
@@ -11,6 +12,8 @@ interface NavbarProps {
 
 const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,18 +24,26 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Close mobile menu when switching to desktop
+    if (!isMobile && menuOpen) {
+      setMenuOpen(false);
+    }
+  }, [isMobile, menuOpen]);
+
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
       setActiveSection(sectionId);
+      if (isMobile) setMenuOpen(false);
     }
   };
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 font-inter ${
-        scrolled 
+        scrolled || menuOpen
           ? "bg-white/90 shadow-md backdrop-blur-sm py-2" 
           : "bg-transparent py-4"
       }`}
@@ -40,11 +51,12 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center gap-2 group">
           <Waves className="h-6 w-6 text-[#2980b9] group-hover:animate-bounce" />
-          <span className={`font-extrabold text-2xl transition-colors duration-300 ${
-            scrolled ? "text-[#2980b9]" : "text-white"
+          <span className={`font-extrabold text-xl md:text-2xl transition-colors duration-300 ${
+            scrolled || menuOpen ? "text-[#2980b9]" : "text-white"
           } group-hover:text-[#6dd5fa]`}>TARA</span>
         </div>
         
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           {["home", "features", "testimonials", "contact"].map((section) => (
             <button
@@ -64,7 +76,38 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
           ))}
         </nav>
         
-        <div className="flex items-center gap-2">
+        {/* Mobile Navigation Toggle */}
+        <button 
+          className="md:hidden flex items-center justify-center z-50"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? (
+            <X className={`h-6 w-6 ${scrolled || menuOpen ? "text-[#2980b9]" : "text-white"}`} />
+          ) : (
+            <Menu className={`h-6 w-6 ${scrolled ? "text-[#2980b9]" : "text-white"}`} />
+          )}
+        </button>
+        
+        {/* Mobile Navigation Menu */}
+        <div className={`fixed inset-0 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center z-40 transition-all duration-300 ${
+          menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}>
+          <nav className="flex flex-col items-center gap-6">
+            {["home", "features", "testimonials", "contact"].map((section) => (
+              <button
+                key={section}
+                onClick={() => scrollToSection(section)}
+                className="text-xl font-medium capitalize text-gray-800 hover:text-[#2980b9] transition-all duration-300"
+              >
+                {section}
+              </button>
+            ))}
+          </nav>
+        </div>
+        
+        {/* Desktop Action Buttons */}
+        <div className="hidden md:flex items-center gap-2">
           <Link to="/admin/login">
             <Button 
               variant="outline" 

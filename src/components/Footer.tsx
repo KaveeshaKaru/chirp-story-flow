@@ -50,7 +50,7 @@ const Footer = () => {
 
       {/* Main footer content */}
       <div className="container mx-auto px-4 py-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Logo and description */}
           <div className="backdrop-blur-sm bg-white/5 p-6 rounded-xl border border-white/10 transform transition-transform hover:scale-105">
             <div className="flex items-center gap-2 mb-4">
@@ -100,19 +100,19 @@ const Footer = () => {
 
             <div className="mt-6 p-3 bg-white/10 rounded-lg">
               <p className="text-sm font-medium text-white/90">Subscribe to our newsletter</p>
-              <div className="mt-2 flex gap-2">
+              <div className="mt-2 flex flex-col sm:flex-row gap-2">
                 <input 
                   type="email" 
                   placeholder="Enter your email" 
                   className="px-3 py-2 bg-white/20 border border-white/10 rounded-md text-sm flex-1 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/30"
                 />
-                <Button size="sm" className="bg-white text-blue-600 hover:bg-white/90">Subscribe</Button>
+                <Button size="sm" className="bg-white text-blue-600 hover:bg-white/90 sm:w-auto w-full mt-1 sm:mt-0">Subscribe</Button>
               </div>
             </div>
           </div>
           
           {/* Contact Us */}
-          <div className="backdrop-blur-sm bg-white/5 p-6 rounded-xl border border-white/10 transform transition-transform hover:scale-105">
+          <div className="backdrop-blur-sm bg-white/5 p-6 rounded-xl border border-white/10 transform transition-transform hover:scale-105 md:col-span-2 lg:col-span-1">
             <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
               <Umbrella size={20} className="text-white" /> Contact Us
             </h3>
@@ -152,9 +152,9 @@ const Footer = () => {
         
         {/* Copyright */}
         <div className="border-t border-white/20 mt-12 pt-8 text-center text-white/60">
-          <p className="flex items-center justify-center gap-1">
+          <p className="flex flex-wrap items-center justify-center gap-1 px-4">
             <span>© {new Date().getFullYear()} Tara Guest House.</span> 
-            <span className="px-2">|</span> 
+            <span className="px-2 hidden sm:inline">|</span> 
             <span>All rights reserved.</span>
           </p>
           <p className="mt-2 text-sm">Crafted with ❤️ in Weligama</p>

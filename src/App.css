@@ -1,8 +1,10 @@
+
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -39,4 +41,35 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Mobile responsiveness fixes */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  h1, h2, h3 {
+    word-break: break-word;
+  }
+}
+
+/* Ensures images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevents content from being hidden under fixed headers on anchor jumps */
+:target::before {
+  content: "";
+  display: block;
+  height: 80px; /* Approx height of header */
+  margin-top: -80px;
 }
