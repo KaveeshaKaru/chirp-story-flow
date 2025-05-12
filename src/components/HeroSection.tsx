@@ -1,37 +1,26 @@
-
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Palmtree, Waves, Sun, MapPin } from "lucide-react";
-
 const HeroSection = () => {
   const [offset, setOffset] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     setIsVisible(true);
-    
     const handleScroll = () => {
       setOffset(window.pageYOffset);
     };
-    
     window.addEventListener('scroll', handleScroll);
-    
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+  return <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background image with parallax effect */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')",
-          transform: `translateY(${offset * 0.5}px)`,
-          filter: "brightness(0.6)"
-        }}
-      ></div>
+      <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: "url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')",
+      transform: `translateY(${offset * 0.5}px)`,
+      filter: "brightness(0.6)"
+    }}></div>
       
       {/* Animated floating elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -77,32 +66,24 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-              <Button 
-                size="lg" 
-                className="bg-white text-[#2980b9] hover:bg-white/90 font-semibold transition-all hover:scale-105 hover:shadow-lg"
-                onClick={() => {
-                  const contactSection = document.getElementById("contact");
-                  contactSection?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
+              <Button size="lg" className="bg-white text-[#2980b9] hover:bg-white/90 font-semibold transition-all hover:scale-105 hover:shadow-lg" onClick={() => {
+              const contactSection = document.getElementById("contact");
+              contactSection?.scrollIntoView({
+                behavior: "smooth"
+              });
+            }}>
                 Book Your Stay
               </Button>
-              <Button
-  size="lg"
-  variant="outline"
-  style={{
-    backgroundImage: 'linear-gradient(to right, #2980b9, #6dd5fa, #ffffff)',
-    color: '#fff',
-    border: 'none',
-  }}
-  className="transition-all hover:scale-105"
-  onClick={() => {
-    const featuresSection = document.getElementById("features");
-    featuresSection?.scrollIntoView({ behavior: "smooth" });
-  }}
->
-  Explore Amenities
-</Button>
+              <Button size="lg" variant="outline" style={{
+              backgroundImage: 'linear-gradient(to right, #2980b9, #6dd5fa, #ffffff)',
+              color: '#fff',
+              border: 'none'
+            }} className="transition-all hover:scale-105" onClick={() => {
+              const featuresSection = document.getElementById("features");
+              featuresSection?.scrollIntoView({
+                behavior: "smooth"
+              });
+            }}>Explore Features</Button>
             </div>
             
             <div className="flex flex-wrap items-center justify-center gap-8 text-white/80">
@@ -126,16 +107,9 @@ const HeroSection = () => {
       {/* Wave decoration with enhanced animation */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full">
-          <path 
-            fill="#ffffff" 
-            fillOpacity="1" 
-            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
-            className="animate-wave"
-          ></path>
+          <path fill="#ffffff" fillOpacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" className="animate-wave"></path>
         </svg>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default HeroSection;
