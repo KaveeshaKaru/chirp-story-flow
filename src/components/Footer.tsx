@@ -2,7 +2,7 @@ import React from "react";
 import { Sun, Umbrella, Cloud } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const Footer = () => {
-  return <footer className="relative bg-gradient-to-b from-[#0ea5e9] to-[#2980b9] text-white pt-16">
+  return <footer className="relative bg-gradient-to-b from-[#0ea5e9] to-[#2980b9] text-white">
       {/* Static wavy background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="absolute top-0 left-0 w-full h-full" fill="url(#footer-gradient)">
