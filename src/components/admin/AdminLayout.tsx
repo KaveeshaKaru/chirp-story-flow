@@ -87,32 +87,7 @@ const AdminLayout = () => {
             </div>
 
             <div className="flex gap-2 w-full">
-              <Button 
-                variant={currentTheme === 'light' ? "default" : "outline"}
-                size="sm" 
-                className={cn(
-                  "flex-1 rounded-full",
-                  currentTheme === 'light' 
-                    ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                    : 'text-white hover:bg-blue-900 border-blue-400'
-                )}
-                onClick={() => setCurrentTheme('light')}
-              >
-                Personal
-              </Button>
-              <Button 
-                variant={currentTheme === 'dark' ? "default" : "outline"}
-                size="sm" 
-                className={cn(
-                  "flex-1 rounded-full",
-                  currentTheme === 'dark' 
-                    ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                    : 'text-gray-500 hover:bg-gray-100 border-gray-200'
-                )}
-                onClick={() => setCurrentTheme('dark')}
-              >
-                Business
-              </Button>
+              
             </div>
           </SidebarHeader>
           
