@@ -50,16 +50,11 @@ const AdminLayout = () => {
       <div className="min-h-screen flex w-full bg-gray-100">
         <Sidebar>
           <SidebarHeader className="flex items-center justify-center p-4 bg-gradient-to-r from-[#2980b9] to-[#3498db] text-white">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-white p-1 shadow-lg overflow-hidden flex items-center justify-center">
-                <img 
-                  src="/TaraVerticle.png" 
-                  alt="TARA Logo" 
-                  className="w-8 h-8 object-contain" 
-                />
-              </div>
-              <span className="font-extrabold text-xl text-white tracking-wider">TARA</span>
-            </div>
+            <img 
+              src="/TaraVerticle.png" 
+              alt="TARA Logo" 
+              className="h-12 w-auto object-contain" 
+            />
           </SidebarHeader>
           <SidebarContent className="bg-gradient-to-b from-white to-gray-50 p-2">
             <div className="mb-6 mt-2">
