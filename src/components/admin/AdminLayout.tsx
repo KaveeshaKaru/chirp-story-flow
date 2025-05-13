@@ -15,7 +15,8 @@ import {
   SidebarFooter,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
-import { Waves } from "lucide-react";
+import { LayoutDashboard, ClipboardList, Settings, Users, LogOut } from "lucide-react";
+import { Avatar } from "@/components/ui/avatar";
 
 const AdminLayout = () => {
   const { admin, isLoading, logout } = useAdminAuth();
@@ -48,97 +49,108 @@ const AdminLayout = () => {
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-gray-100">
         <Sidebar>
-          <SidebarHeader className="flex items-center justify-center p-4">
+          <SidebarHeader className="flex items-center justify-center p-4 bg-gradient-to-r from-[#2980b9] to-[#3498db] text-white">
             <div className="flex items-center gap-2">
-              <Waves className="h-6 w-6 text-[#2980b9]" />
-              <span className="font-extrabold text-xl text-[#2980b9]">TARA</span>
+              <div className="w-10 h-10 rounded-full bg-white p-1 shadow-lg overflow-hidden flex items-center justify-center">
+                <img 
+                  src="/TaraVerticle.png" 
+                  alt="TARA Logo" 
+                  className="w-8 h-8 object-contain" 
+                />
+              </div>
+              <span className="font-extrabold text-xl text-white tracking-wider">TARA</span>
             </div>
           </SidebarHeader>
-          <SidebarContent>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton 
-                  isActive={window.location.pathname === "/admin/dashboard"} 
-                  tooltip="Dashboard"
-                  onClick={() => navigate("/admin/dashboard")}
-                >
-                  <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect width="7" height="9" x="3" y="3" rx="1" />
-                    <rect width="7" height="5" x="14" y="3" rx="1" />
-                    <rect width="7" height="9" x="14" y="12" rx="1" />
-                    <rect width="7" height="5" x="3" y="16" rx="1" />
-                  </svg>
-                  <span>Dashboard</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton 
-                  isActive={window.location.pathname === "/admin/inquiries"} 
-                  tooltip="Inquiries"
-                  onClick={() => navigate("/admin/inquiries")}
-                >
-                  <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-                    <path d="M15 2H9a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Z" />
-                    <path d="M12 11h4" />
-                    <path d="M12 16h4" />
-                    <path d="M8 11h.01" />
-                    <path d="M8 16h.01" />
-                  </svg>
-                  <span>Inquiries</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton 
-                  isActive={window.location.pathname === "/admin/bookings"} 
-                  tooltip="Bookings"
-                  onClick={() => navigate("/admin/bookings")}
-                >
-                  <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                    <line x1="16" x2="16" y1="2" y2="6" />
-                    <line x1="8" x2="8" y1="2" y2="6" />
-                    <line x1="3" x2="21" y1="10" y2="10" />
-                  </svg>
-                  <span>Bookings</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton 
-                  isActive={window.location.pathname === "/admin/settings"} 
-                  tooltip="Settings"
-                  onClick={() => navigate("/admin/settings")}
-                >
-                  <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-                    <circle cx="12" cy="12" r="3" />
-                  </svg>
-                  <span>Settings</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
+          <SidebarContent className="bg-gradient-to-b from-white to-gray-50 p-2">
+            <div className="mb-6 mt-2">
+              <div className="text-xs text-gray-500 uppercase tracking-wider px-4 mb-2">Main</div>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton 
+                    isActive={window.location.pathname === "/admin/dashboard"} 
+                    tooltip="Dashboard"
+                    onClick={() => navigate("/admin/dashboard")}
+                    className={`transition-all duration-200 ${window.location.pathname === "/admin/dashboard" ? "bg-blue-100 text-[#2980b9]" : "hover:bg-blue-50"}`}
+                  >
+                    <LayoutDashboard className="w-4 h-4" />
+                    <span>Dashboard</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                
+                <SidebarMenuItem>
+                  <SidebarMenuButton 
+                    isActive={window.location.pathname === "/admin/inquiries"} 
+                    tooltip="Inquiries"
+                    onClick={() => navigate("/admin/inquiries")}
+                    className={`transition-all duration-200 ${window.location.pathname === "/admin/inquiries" ? "bg-blue-100 text-[#2980b9]" : "hover:bg-blue-50"}`}
+                  >
+                    <ClipboardList className="w-4 h-4" />
+                    <span>Inquiries</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+                
+                <SidebarMenuItem>
+                  <SidebarMenuButton 
+                    isActive={window.location.pathname === "/admin/bookings"} 
+                    tooltip="Bookings"
+                    onClick={() => navigate("/admin/bookings")}
+                    className={`transition-all duration-200 ${window.location.pathname === "/admin/bookings" ? "bg-blue-100 text-[#2980b9]" : "hover:bg-blue-50"}`}
+                  >
+                    <Users className="w-4 h-4" />
+                    <span>Bookings</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </div>
+            
+            <div className="mb-2">
+              <div className="text-xs text-gray-500 uppercase tracking-wider px-4 mb-2">System</div>
+              <SidebarMenu>
+                <SidebarMenuItem>
+                  <SidebarMenuButton 
+                    isActive={window.location.pathname === "/admin/settings"} 
+                    tooltip="Settings"
+                    onClick={() => navigate("/admin/settings")}
+                    className={`transition-all duration-200 ${window.location.pathname === "/admin/settings" ? "bg-blue-100 text-[#2980b9]" : "hover:bg-blue-50"}`}
+                  >
+                    <Settings className="w-4 h-4" />
+                    <span>Settings</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              </SidebarMenu>
+            </div>
           </SidebarContent>
-          <SidebarFooter>
-            <div className="px-3 py-2">
-              <div className="flex flex-col gap-2">
-                <div className="text-xs text-gray-500">Logged in as:</div>
-                <div className="font-medium text-sm">{admin?.name}</div>
-                <div className="text-xs text-gray-500">{admin?.role}</div>
-                <Button 
-                  variant="outline" 
-                  className="mt-2 w-full"
-                  onClick={handleLogout}
-                >
-                  Logout
-                </Button>
+          <SidebarFooter className="border-t bg-white">
+            <div className="p-4">
+              <div className="flex items-center gap-3 mb-3">
+                <Avatar className="h-10 w-10 bg-blue-100 border-2 border-blue-300">
+                  <span className="text-[#2980b9] font-bold">
+                    {admin?.name?.charAt(0) || "A"}
+                  </span>
+                </Avatar>
+                <div>
+                  <div className="font-medium text-sm">{admin?.name}</div>
+                  <div className="text-xs text-gray-500">{admin?.role}</div>
+                </div>
               </div>
+              <Button 
+                variant="outline" 
+                className="w-full flex items-center gap-2 mt-2 border-red-200 text-red-600 hover:bg-red-50 hover:text-red-700"
+                onClick={handleLogout}
+              >
+                <LogOut className="h-4 w-4" />
+                <span>Logout</span>
+              </Button>
             </div>
           </SidebarFooter>
         </Sidebar>
         <SidebarInset>
           <div className="p-4 md:p-6">
             <div className="flex items-center justify-between mb-6">
-              <h1 className="text-2xl font-extrabold">Admin Dashboard</h1>
+              <div className="space-y-1">
+                <h1 className="text-2xl font-extrabold text-gray-800">Admin Dashboard</h1>
+                <p className="text-sm text-gray-500">Welcome back, {admin?.name}</p>
+              </div>
               <div className="flex items-center gap-2">
                 <SidebarTrigger className="md:hidden" />
               </div>
