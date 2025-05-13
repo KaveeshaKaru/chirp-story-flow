@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { 
   Table, 
@@ -31,8 +30,26 @@ import {
 import { Check, X, Clock } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
-// Mock data for inquiries
-const mockInquiries = [
+// Types for inquiry
+type InquiryStatus = "pending" | "confirmed" | "cancelled";
+
+interface Inquiry {
+  id: number;
+  inquiry_no: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+  checkin_date: string;
+  checkout_date: string;
+  num_guests: number;
+  special_requests: string;
+  slip_path: string;
+  status: InquiryStatus;
+  created_at: string;
+}
+
+// Mock data for inquiries - with status type properly enforced
+const mockInquiries: Inquiry[] = [
   {
     id: 1,
     inquiry_no: "INQ-2025-001",
@@ -90,24 +107,6 @@ const mockInquiries = [
     created_at: "2025-05-13T14:20:00Z"
   },
 ];
-
-// Types for inquiry
-type InquiryStatus = "pending" | "confirmed" | "cancelled";
-
-interface Inquiry {
-  id: number;
-  inquiry_no: string;
-  first_name: string;
-  last_name: string;
-  email: string;
-  checkin_date: string;
-  checkout_date: string;
-  num_guests: number;
-  special_requests: string;
-  slip_path: string;
-  status: InquiryStatus;
-  created_at: string;
-}
 
 export default function Inquiries() {
   const [inquiries, setInquiries] = useState<Inquiry[]>(mockInquiries);
@@ -189,7 +188,15 @@ export default function Inquiries() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {filteredInquiries.map((inquiry) => (
+            {inquiries.filter(inquiry => {
+              const searchLower = searchTerm.toLowerCase();
+              return (
+                inquiry.inquiry_no.toLowerCase().includes(searchLower) ||
+                inquiry.first_name.toLowerCase().includes(searchLower) ||
+                inquiry.last_name.toLowerCase().includes(searchLower) ||
+                inquiry.email.toLowerCase().includes(searchLower)
+              );
+            }).map((inquiry) => (
               <TableRow key={inquiry.id}>
                 <TableCell className="font-medium">{inquiry.inquiry_no}</TableCell>
                 <TableCell>{`${inquiry.first_name} ${inquiry.last_name}`}</TableCell>
