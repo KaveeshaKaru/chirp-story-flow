@@ -74,7 +74,7 @@ const AdminLayout = () => {
                 <SidebarMenuItem>
                   <SidebarMenuButton isActive={window.location.pathname === "/admin/bookings"} tooltip={isCollapsed ? "Calendar" : ""} onClick={() => navigate("/admin/bookings")} className={cn("w-full flex items-center justify-center md:justify-start gap-4 p-3 rounded-xl transition-all", window.location.pathname === "/admin/bookings" ? currentTheme === 'dark' ? "bg-blue-800 text-white" : "bg-blue-50 text-blue-600" : currentTheme === 'dark' ? "hover:bg-blue-900 text-white" : "hover:bg-gray-100 text-gray-600")}>
                     <Calendar className={cn("w-5 h-5", window.location.pathname === "/admin/bookings" ? "text-blue-500" : "")} />
-                    {!isCollapsed && <span>Calendar</span>}
+                    {!isCollapsed && <span>Bookings</span>}
                   </SidebarMenuButton>
                 </SidebarMenuItem>
 
