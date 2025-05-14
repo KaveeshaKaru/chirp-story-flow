@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAdminAuth } from "@/contexts/AdminAuthContext";
@@ -29,7 +28,7 @@ const AdminLogin = () => {
   const { login } = useAdminAuth();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -54,6 +53,15 @@ const AdminLogin = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center overflow-hidden relative bg-gradient-to-br from-[#2980b9] via-[#6dd5fa] to-[#add8e6]">
+      {/* Bouncing Beach Ball */}
+      <div className="fixed w-20 h-20 z-0 animate-bounce-around pointer-events-none">
+        <img
+          src="/beachball.svg"
+          alt="Bouncing Beach Ball"
+          className="w-full h-full object-contain animate-spin-slow"
+        />
+      </div>
+
       {/* Animated wave backgrounds */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 left-0 right-0 h-48 w-[200%] animate-wave-scroll">
@@ -76,25 +84,25 @@ const AdminLogin = () => {
       </div>
 
       {/* Beach umbrella decoration - removed animation and increased size */}
-      <div className="absolute bottom-0 right-0 w-40 h-40 md:w-64 md:h-64 z-10">
-        <img 
-          src="/beachUmbrella.svg" 
-          alt="Beach Umbrella" 
+      <div className="absolute bottom-0 right-0 w-80 h-80 md:w-[32rem] md:h-[32rem] z-10">
+        <img
+          src="/beachUmbrella.svg"
+          alt="Beach Umbrella"
           className="w-full h-full object-contain"
         />
       </div>
+
 
       <div className="container flex flex-col md:flex-row max-w-6xl mx-auto z-10">
         {/* Left Section */}
         <div className="w-full md:w-1/2 p-8 text-white animate-fade-in">
           <div className="mb-12">
-            <div className="flex items-center mb-8">
-              <Waves className="h-10 w-10 text-white mr-2" />
-              <span className="text-2xl font-bold">TARA</span>
+            <div className="flex items-center mb-6">
+              <img src="/TaraVerticle.png" alt="TARA Logo" className="h-12 object-contain" />
             </div>
           </div>
-          <h1 className="text-5xl font-bold mb-6 tracking-tight">Hello,<br/>welcome!</h1>
-          <p className="text-lg mb-6 opacity-90 max-w-md">
+          <h1 className="text-5xl font-bold mb-6 tracking-tight">Hello,<br />welcome!</h1>
+          <p className="text-lg mb-6 opacity-90 max-w-md font-spartan">
             Log in to access the admin dashboard and manage your TARA resort bookings and settings.
           </p>
           <div className="mt-16 pt-16">
@@ -112,7 +120,8 @@ const AdminLogin = () => {
             </div>
           </div>
         </div>
-        
+
+
         {/* Right Section */}
         <div className="w-full md:w-1/2 p-4">
           <div className="bg-white shadow-2xl rounded-xl p-8 md:p-12 transform hover:scale-[1.01] transition-all duration-300 animate-fade-in">
@@ -125,12 +134,12 @@ const AdminLogin = () => {
                     <FormItem>
                       <FormLabel className="text-gray-600">Email address</FormLabel>
                       <FormControl>
-                        <Input 
-                          placeholder="admin@tara.com" 
-                          type="email" 
+                        <Input
+                          placeholder="admin@tara.com"
+                          type="email"
                           className="h-12 border-[#2980b9] focus:border-[#2980b9] pl-4 transition-all"
-                          {...field} 
-                          disabled={isLoading} 
+                          {...field}
+                          disabled={isLoading}
                         />
                       </FormControl>
                       <FormMessage />
@@ -144,12 +153,12 @@ const AdminLogin = () => {
                     <FormItem>
                       <FormLabel className="text-gray-600">Password</FormLabel>
                       <FormControl>
-                        <Input 
-                          placeholder="••••••" 
-                          type="password" 
+                        <Input
+                          placeholder="••••••"
+                          type="password"
                           className="h-12 border-[#2980b9] focus:border-[#2980b9] pl-4 transition-all"
-                          {...field} 
-                          disabled={isLoading} 
+                          {...field}
+                          disabled={isLoading}
                         />
                       </FormControl>
                       <FormMessage />
@@ -162,14 +171,14 @@ const AdminLogin = () => {
                     name="rememberMe"
                     render={({ field }) => (
                       <div className="flex items-center space-x-2">
-                        <Checkbox 
-                          id="rememberMe" 
-                          checked={field.value} 
+                        <Checkbox
+                          id="rememberMe"
+                          checked={field.value}
                           onCheckedChange={field.onChange}
-                          className="border-[#2980b9] data-[state=checked]:bg-[#2980b9]" 
+                          className="border-[#2980b9] data-[state=checked]:bg-[#2980b9]"
                         />
-                        <label 
-                          htmlFor="rememberMe" 
+                        <label
+                          htmlFor="rememberMe"
                           className="text-sm text-gray-600 cursor-pointer"
                         >
                           Remember me
@@ -182,16 +191,16 @@ const AdminLogin = () => {
                   </a>
                 </div>
                 <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 pt-4">
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="h-12 px-8 bg-[#2980b9] hover:bg-[#3498db] transition-colors flex-1"
                     disabled={isLoading}
                   >
                     {isLoading ? "Logging in..." : "Login"}
                   </Button>
-                  <Button 
-                    type="button" 
-                    variant="outline" 
+                  <Button
+                    type="button"
+                    variant="outline"
                     className="h-12 px-8 border-[#2980b9] text-[#2980b9] hover:bg-[#2980b9]/10 transition-colors flex-1"
                   >
                     Sign up
