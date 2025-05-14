@@ -75,6 +75,15 @@ const AdminLogin = () => {
         </div>
       </div>
 
+      {/* Beach umbrella decoration */}
+      <div className="absolute bottom-0 right-0 w-32 h-32 md:w-48 md:h-48 z-10 animate-float-slow">
+        <img 
+          src="/beachUmbrella.svg" 
+          alt="Beach Umbrella" 
+          className="w-full h-full object-contain"
+        />
+      </div>
+
       <div className="container flex flex-col md:flex-row max-w-6xl mx-auto z-10">
         {/* Left Section */}
         <div className="w-full md:w-1/2 p-8 text-white animate-fade-in">
